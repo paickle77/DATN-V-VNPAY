@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    p Đang chuyển đến trang thanh toán...
+    form(id="autoForm", action="/order/create_payment_url", method="post")
+      input(type="hidden", name="amount", value=amount)
+      p Số tiền: #{amount}
+      input(type="hidden", name="language", value="vn")
+    script.
+      document.getElementById("autoForm").submit();
+
+
+//- html
+//-   head
+//-     title= title
+//-     meta(charset='UTF-8')
+//-     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+//-   body
+//-     p Đang chuyển đến trang thanh toán...
+//-     form(id="autoForm", action="/order/create_payment_url", method="post")
+//-       input(type="hidden", name="amount", value=amount)
+//-       input(type="hidden", name="language", value="vn")
+//-       if bankCode
+//-         input(type="hidden", name="bankCode", value=bankCode)
+//-     script.
+//-       document.getElementById("autoForm").submit();
